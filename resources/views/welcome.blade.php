@@ -23,9 +23,8 @@
                 <div class="flex lg:flex-1">
                 </div>
                 <div class="hidden lg:flex lg:gap-x-12">
-                    <a href="#" class="text-sm font-semibold leading-6 text-white">Product</a>
-                    <a href="#" class="text-sm font-semibold leading-6 text-white">Order</a>
-                    <a href="#" class="text-sm font-semibold leading-6 text-white">Location</a>
+                    <a href="https://www.instagram.com/telu.coffee/" class="text-sm font-semibold leading-6 text-white">Instagram</a>
+                    <a href="https://maps.app.goo.gl/vaQnA2jHRaGjMYZ18" class="text-sm font-semibold leading-6 text-white">Location</a>
                 </div>
                 <div class="hidden lg:flex lg:flex-1 lg:justify-end">
                     <a href="{{ route('login') }}" class="text-sm font-semibold leading-6 text-white">Log in <span aria-hidden="true">&rarr;</span></a>

@@ -2,8 +2,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <h2 class="text-2xl font-bold mb-4">Shopping Cart</h2>
+    <div class="container-fluid mt-10 sm:mx-auto sm:w-full sm:max-w-lg overflow-hidden py-6 sm:py-6">
+        <h2 class="text-2xl font-bold mb-4 block leading-6 text-gray-900">Pesanan Anda :</h2>
         @if ($cartItems->isEmpty())
             <p>Your cart is empty.</p>
         @else
@@ -26,8 +26,8 @@
                                 <form action="{{ route('cart.update', ['id' => $cartItem->id]) }}" method="post">
                                     @csrf
                                     <label for="quantity" class="sr-only">Quantity</label>
-                                    <input type="number" name="quantity" id="quantity" class="w-16 border rounded-md p-1" value="{{ $cartItem->quantity }}" min="1">
-                                    <button type="submit" class="ml-2 bg-blue-500 text-white px-4 py-1 rounded-md">Update</button>
+                                    <input type="number" name="quantity" id="quantity" class="w-12 border rounded-md p-1 bg-white text-black" value="{{ $cartItem->quantity }}" min="1">
+                                    <button type="submit" class="ml-2 bg-blue-500 text-white px-4 py-1 rounded-md">Tambah</button>
                                 </form>
                             </div>
                         </div>
@@ -39,7 +39,7 @@
             </div>
             <div class="mt-4">
                 <a href="{{ route('checkout.index') }}" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 focus:outline-none focus:shadow-outline-green active:bg-green-700">
-                    Proceed to Checkout
+                    Bayar
                 </a>
             </div>
         @endif
