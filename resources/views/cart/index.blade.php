@@ -12,7 +12,7 @@
                     <li class="mb-4">
                         <div class="flex items-center">
                             <div class="mr-4">
-                                <img src="{{ asset('storage/' . $cartItem->product->image_url) }}" class="w-16 h-16 object-cover" alt="{{ $cartItem->product->name }}">
+                                <img src="{{ asset($cartItem->product->image_url) }}" class="w-16 h-16 object-cover" alt="{{ $cartItem->product->name }}">
                             </div>
                             <div>
                                 <h3 class="text-lg font-semibold">{{ $cartItem->product->name }}</h3>

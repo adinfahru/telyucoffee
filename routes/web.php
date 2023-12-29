@@ -34,6 +34,9 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::get('/menu',[ProductController::class, 'index'])->name('menu.index');
+Route::get('/menu/add',[ProductController::class, 'add'])->name('menu.add');
+Route::post('/menu/store',[ProductController::class, 'store'])->name('menu.store');
+Route::delete('/menu/delete/{id}', [ProductController::class, 'destroy'])->name('menu.destroy');
 
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::post('/cart/add/{id}', [CartController::class, 'addToCart'])->name('cart.add');

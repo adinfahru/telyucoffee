@@ -19,7 +19,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             @foreach($products as $product)
                 <div class="bg-white p-4 rounded-lg shadow-lg mb-4">
-                    <img src="{{ asset('storage/' . $product->image_url) }}" class="w-full h-32 object-cover mb-4" alt="{{ $product->name }}">
+                    <img src="{{ asset($product->image_url) }}" class="w-full h-32 object-cover mb-4" alt="{{ $product->name }}">
                     <h5 class="text-xl font-semibold mb-2">{{ $product->name }}</h5>
                     <p class="text-gray-700 mb-2">{{ $product->description }}</p>
                     <p class="text-gray-800 font-bold">Rp. {{ $product->price }}</p>
@@ -27,6 +27,14 @@
                         @csrf
                         <button type="submit" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-full">Add to Cart</button>
                     </form>
+                    @if (auth()->check() && auth()->user()->email == 'admin@gmail.com')
+                    <form action="{{ route('menu.destroy', ['id' => $product->id]) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="mt-4 bg-red-500 text-white px-4 py-2 rounded-full">Delete</button>
+                    </form>
+                    @endif
+                    
                 </div>
             @endforeach
         </div>

@@ -16,6 +16,13 @@
                         {{ __('Menu') }}
                     </x-nav-link>
                 </div>
+                @if (auth()->check() && auth()->user()->email == 'admin@gmail.com')
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('menu.add')" :active="request()->routeIs('menu.add')">
+                        {{ __('Add Menu') }}
+                    </x-nav-link>
+                </div>
+                @endif
             </div>
 
             <!-- Settings Dropdown -->
