@@ -2,9 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-fluid mt-10 sm:mx-auto sm:w-full sm:max-w-xl overflow-hidden py-6 sm:py-6">
-    <h2 class="text-2xl font-bold mb-4 block leading-6 text-gray-900">Checkout</h2>
-
+<div class="container-fluid mt-10 sm:mx-auto sm:w-full sm:max-w-xl overflow-hidden py-6 sm:py-6 text-gray-800">
     <div class="flex flex-col md:flex-row justify-between">
         <div class="w-full md:w-1/2 mb-8 md:mb-0">
             <h3 class="text-xl font-semibold mb-4">Pesanan Anda : </h3>
@@ -64,7 +62,7 @@
                     </div>
                 </div>
                 <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 focus:outline-none focus:shadow-outline-green active:bg-green-700">
-                    Complete Purchase
+                    Selesaikan Pembayaran
                 </button>
             </form>
         </div>

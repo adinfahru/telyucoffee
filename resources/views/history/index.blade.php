@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <h2>History Records</h2>
+    <div class="container-fluid mt-10 sm:mx-auto sm:w-full sm:max-w-sm text-gray-900">
+        <h1 class="block text-lg font-medium leading-6 text-gray-900 mb-5">Riwayat Pembelian Anda : </h1>
 
         @if(count($histories) > 0)
             <table class="table">
                 <thead>
-                    <tr>
+                    <tr class="text-gray-900">
                         <th>ID</th>
                         <th>Nama Produk</th>
                         <th>Quantity</th>
@@ -28,7 +28,7 @@
                 </tbody>
             </table>
         @else
-            <p>No history records found.</p>
+            <p class="block text-sm font-medium leading-6 text-gray-900 mb-5">Belum ada Riwayat Pembelian</p>
         @endif
     </div>
 @endsection
