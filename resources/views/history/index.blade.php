@@ -13,6 +13,7 @@
                         <th>Quantity</th>
                         <th>Total Harga</th>
                         <th>Status</th>
+                        <th>Date Ordered</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -23,6 +24,7 @@
                             <td>{{ $history->quantity }}</td>
                             <td>{{ $history->total_price }}</td>
                             <td>{{ $history->status }}</td>
+                            <td>{{ $history->created_at }}</td>
                         </tr>
                     @endforeach
                 </tbody>

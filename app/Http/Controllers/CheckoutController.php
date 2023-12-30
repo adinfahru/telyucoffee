@@ -28,20 +28,16 @@ class CheckoutController extends Controller
         $user = auth()->user();
 
         $cartItems = CartItem::with('product')->where('user_id', $user->id)->get();
-        $totalPrice = $cartItems->sum(function ($cartItem) {
-            return $cartItem->product->price * $cartItem->quantity;
-        });
-        foreach ($cartItems as $cartItem) {
-            $cartItemData = $cartItem;
-        }
 
-        History::create([
-            'user_id' => $cartItemData->user_id,
-            'product_id' => $cartItemData->product_id,
-            'quantity' => $cartItemData->quantity,
-            'total_price' => $totalPrice,
-            'status' => 'paid',
-        ]);
+        foreach ($cartItems as $cartItem) {
+            History::create([
+                'user_id' => $cartItem->user_id,
+                'product_id' => $cartItem->product_id,
+                'quantity' => $cartItem->quantity,
+                'total_price' => $cartItem->product->price * $cartItem->quantity,
+                'status' => 'paid',
+            ]);
+        }
         
         CartItem::where('user_id', $user->id)->delete();
 
