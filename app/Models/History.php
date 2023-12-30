@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CartItem extends Model
+class History extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id','product_id', 'quantity'];
+    protected $fillable = ['user_id', 'product_id', 'quantity', 'total_price','status'];
 
     public function user()
     {
@@ -21,8 +21,4 @@ class CartItem extends Model
         return $this->belongsTo(Product::class);
     }
 
-    public function histories()
-    {
-        return $this->hasMany(History::class);
-    }
 }
